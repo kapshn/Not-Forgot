@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,9 +13,13 @@
 		A76564692444419700CAD084 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A76564672444419700CAD084 /* Main.storyboard */; };
 		A765646B2444419900CAD084 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A765646A2444419900CAD084 /* Assets.xcassets */; };
 		A765646E2444419900CAD084 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A765646C2444419900CAD084 /* LaunchScreen.storyboard */; };
+		ECDEAB104D13560EB88E5E0B /* Pods_Not_Forgot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E73D260198DF810D4DE48B1 /* Pods_Not_Forgot.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F2F985783AF7B644253A5EB /* Pods-Not Forgot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Not Forgot.debug.xcconfig"; path = "Target Support Files/Pods-Not Forgot/Pods-Not Forgot.debug.xcconfig"; sourceTree = "<group>"; };
+		7E73D260198DF810D4DE48B1 /* Pods_Not_Forgot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Not_Forgot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8634FB1016816783566A6F69 /* Pods-Not Forgot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Not Forgot.release.xcconfig"; path = "Target Support Files/Pods-Not Forgot/Pods-Not Forgot.release.xcconfig"; sourceTree = "<group>"; };
 		A765645E2444419700CAD084 /* Not Forgot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Not Forgot.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A76564612444419700CAD084 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A76564632444419700CAD084 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECDEAB104D13560EB88E5E0B /* Pods_Not_Forgot.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		44546B06635B52EB2A2F486A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7E73D260198DF810D4DE48B1 /* Pods_Not_Forgot.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8B457295BC9DD3BD0D557BD9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3F2F985783AF7B644253A5EB /* Pods-Not Forgot.debug.xcconfig */,
+				8634FB1016816783566A6F69 /* Pods-Not Forgot.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		A76564552444419700CAD084 = {
 			isa = PBXGroup;
 			children = (
 				A76564602444419700CAD084 /* Not Forgot */,
 				A765645F2444419700CAD084 /* Products */,
+				8B457295BC9DD3BD0D557BD9 /* Pods */,
+				44546B06635B52EB2A2F486A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,9 +98,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A76564722444419900CAD084 /* Build configuration list for PBXNativeTarget "Not Forgot" */;
 			buildPhases = (
+				46C1619D3595A563C5E5CB56 /* [CP] Check Pods Manifest.lock */,
 				A765645A2444419700CAD084 /* Sources */,
 				A765645B2444419700CAD084 /* Frameworks */,
 				A765645C2444419700CAD084 /* Resources */,
+				4DBD78C5069B2E5160765F28 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +158,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		46C1619D3595A563C5E5CB56 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Not Forgot-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4DBD78C5069B2E5160765F28 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Not Forgot/Pods-Not Forgot-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Not Forgot/Pods-Not Forgot-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Not Forgot/Pods-Not Forgot-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A765645A2444419700CAD084 /* Sources */ = {
@@ -282,11 +350,13 @@
 		};
 		A76564732444419900CAD084 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F2F985783AF7B644253A5EB /* Pods-Not Forgot.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HPM5F4QHM6;
 				INFOPLIST_FILE = "Not Forgot/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -300,11 +370,13 @@
 		};
 		A76564742444419900CAD084 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8634FB1016816783566A6F69 /* Pods-Not Forgot.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HPM5F4QHM6;
 				INFOPLIST_FILE = "Not Forgot/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
